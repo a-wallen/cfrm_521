@@ -1,0 +1,7 @@
+jupyterlab
+pandas
+numpy
+matplotlib
+scikit-learn
+kaggle
+python-dotenv

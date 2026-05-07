@@ -1,0 +1,23 @@
+# Data folders and formats
+data/
+*.csv
+*.tsv
+*.parquet
+*.h5
+*.sqlite
+*.db
+
+# API Credentials (CRITICAL - DO NOT REMOVE)
+kaggle.json
+.env
+
+# Python and Jupyter artifacts
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Host-side virtual environments
+venv/
+env/
+.venv/
