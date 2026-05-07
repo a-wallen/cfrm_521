@@ -6,17 +6,11 @@ import json
 import kagglehub
 
 def main():
-    # Defensively strip any accidental quotes/spaces from Docker's .env parsing
-    for key in ['KAGGLE_USERNAME', 'KAGGLE_KEY']:
-        if os.environ.get(key):
-            os.environ[key] = os.environ[key].strip(' "\'')
-
-    # Determine if we have authentication (either via .env or kaggle.json)
+    # Determine if we have authentication via kaggle.json
     has_auth = False
     if os.path.exists('/app/kaggle.json'):
         try:
-            # kagglehub sometimes ignores config directories.
-            # Forcefully read the JSON and inject it as environment variables to guarantee it works.
+            # Forcefully read the JSON and inject it as environment variables for kagglehub
             with open('/app/kaggle.json', 'r') as f:
                 creds = json.load(f)
                 os.environ['KAGGLE_USERNAME'] = creds.get('username', '').strip()
@@ -47,10 +41,10 @@ def main():
                     print("You must manually accept the competition rules before downloading!")
                     print("1. Go to: [https://www.kaggle.com/competitions/GiveMeSomeCredit/rules](https://www.kaggle.com/competitions/GiveMeSomeCredit/rules)")
                     print("2. Click 'I Understand and Accept'")
-                    print("3. Verify your kaggle.json/credentials are correct.")
+                    print("3. Verify your kaggle.json is correct.")
                     print("="*60 + "\n")
         else:
-            print("WARNING: Neither .env credentials nor kaggle.json found! Cannot download data.")
+            print("WARNING: kaggle.json not found! Cannot download data.")
 
     # 2. Setup git hooks inside the container
     if os.path.exists('/app/.git'):

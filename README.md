@@ -17,22 +17,14 @@ cd cfrm_521
 \`\`\`
 
 **2. Configure your Kaggle Credentials:**
-Because we are using a Kaggle dataset, you must authenticate. You can use either the Legacy API file method or the newer Environment Variable method:
+Because we are using a Kaggle dataset, you must authenticate.
 
-**Option A: Legacy API Key (kaggle.json) - Easiest**
 1. Go to Kaggle.com -> Settings -> API.
 2. Scroll down to the **Legacy API Credentials** section and click **Create New Token**.
-   *(Note from Kaggle: This expires any existing legacy keys and downloads a `kaggle.json` file with your new credentials. This does not expire any existing API tokens).*
+   _(Note from Kaggle: This expires any existing legacy keys and downloads a `kaggle.json` file with your new credentials. This does not expire any existing API tokens)._
 3. Move that `kaggle.json` file directly into the **root folder** of this project.
 
-**Option B: Environment Variables (.env)**
-If you prefer environment variables, create a `.env` file in the root folder and paste your credentials:
-\`\`\`text
-KAGGLE_USERNAME=your_kaggle_username
-KAGGLE_KEY=your_kaggle_token_string
-\`\`\`
-
-*Crucial for both options:* You must go to the [Give Me Some Credit Rules](https://www.kaggle.com/competitions/GiveMeSomeCredit/rules) page and click "I Understand and Accept" to authorize the dataset download.
+_Crucial:_ You must go to the [Give Me Some Credit Rules](https://www.kaggle.com/competitions/GiveMeSomeCredit/rules) page and click "I Understand and Accept" to authorize the dataset download.
 
 ## 💻 How to Work (VSCode Only)
 

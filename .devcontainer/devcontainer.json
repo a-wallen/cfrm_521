@@ -4,9 +4,9 @@
     "dockerfile": "../Dockerfile",
     "context": ".."
   },
-  "runArgs": ["--env-file", "${localWorkspaceFolder}/.env"],
   "workspaceMount": "source=${localWorkspaceFolder},target=/app,type=bind",
   "workspaceFolder": "/app",
+  "postCreateCommand": "python /usr/local/bin/start.py",
   "customizations": {
     "vscode": {
       "extensions": [
