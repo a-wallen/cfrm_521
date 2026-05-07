@@ -1,8 +1,9 @@
-jupyterlab
 pandas
 numpy
 matplotlib
 scikit-learn
 kaggle
+kagglehub
 python-dotenv
+pre-commit
 ipykernel

@@ -8,8 +8,8 @@ data/
 *.db
 
 # API Credentials (CRITICAL - DO NOT REMOVE)
-kaggle.json
 .env
+kaggle.json
 
 # Python and Jupyter artifacts
 __pycache__/
