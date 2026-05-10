@@ -7,3 +7,4 @@ kagglehub
 python-dotenv
 pre-commit
 ipykernel
+great-tables
