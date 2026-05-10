@@ -10,8 +10,13 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
-# Install unzip (optional utility, sometimes helpful for manual data extraction)
-RUN apt-get update && apt-get install -y unzip && rm -rf /var/lib/apt/lists/*
+# Install system utilities and Quarto (latest stable)
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends unzip curl ca-certificates && \
+    curl -LO https://quarto.org/download/latest/quarto-linux-amd64.deb && \
+    dpkg -i quarto-linux-amd64.deb && \
+    rm quarto-linux-amd64.deb && \
+    rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
 COPY requirements.txt .

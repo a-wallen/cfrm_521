@@ -7,5 +7,6 @@ kagglehub
 python-dotenv
 pre-commit
 ipykernel
+nbclient
+nbformat
 great-tables
-math
